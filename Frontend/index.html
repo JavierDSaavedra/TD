@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Eventos Concepcion</title>
+	<meta name="description" content="Pagina para recopilar y descubrir eventos en Concepcion.">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	<div class="page">
+		<header class="topbar reveal">
+			<a class="brand" href="#" aria-label="Ir al inicio">
+				<span class="brand-mark" aria-hidden="true"></span>
+				<span class="brand-text">Pulso Conce</span>
+			</a>
+			<nav class="top-links" aria-label="Navegacion principal">
+				<a href="#eventos">Eventos</a>
+				<a href="#publicar">Publicar</a>
+				<a href="#" class="pill">Sumar evento</a>
+			</nav>
+		</header>
+
+		<section class="hero reveal delay-1" id="publicar">
+			<div class="hero-grid">
+				<div class="hero-copy">
+					<span class="kicker">Agenda ciudadana de Concepcion</span>
+					<h1>Recopila, comparte y descubre eventos locales</h1>
+					<p>
+						Una vitrina comunitaria para actividades culturales, musica en vivo, ferias,
+						talleres y panoramas al aire libre en el Gran Concepcion.
+					</p>
+					<div class="hero-actions">
+						<a href="#eventos" class="btn btn-primary">Ver agenda</a>
+						<a href="#" class="btn btn-soft">Enviar evento</a>
+					</div>
+				</div>
+				<figure class="hero-visual" aria-hidden="true">
+					<img src="images/hero.svg" alt="Ilustracion de eventos en Concepcion">
+					<figcaption class="hero-note">Actualizacion semanal colaborativa</figcaption>
+				</figure>
+			</div>
+		</section>
+
+		<section id="eventos" class="reveal delay-2">
+			<div class="controls">
+				<div>
+					<h2>Eventos destacados</h2>
+					<p data-event-count>0 eventos publicados</p>
+				</div>
+				<div class="filters" role="toolbar" aria-label="Filtros de categoria">
+					<button class="filter-btn active" data-filter="Todos" type="button">Todos</button>
+					<button class="filter-btn" data-filter="Musica" type="button">Musica</button>
+					<button class="filter-btn" data-filter="Cultura" type="button">Cultura</button>
+					<button class="filter-btn" data-filter="Comunidad" type="button">Comunidad</button>
+					<button class="filter-btn" data-filter="Cine" type="button">Cine</button>
+				</div>
+			</div>
+
+			<div class="events-grid" data-events></div>
+		</section>
+
+		<footer class="footer">
+			<p>Hecho para visibilizar iniciativas y panoramas de barrio en Concepcion.</p>
+			<p>Pulso Conce · <span data-year></span></p>
+		</footer>
+	</div>
+	<script src="js/app.js"></script>
+</body>
+</html>
