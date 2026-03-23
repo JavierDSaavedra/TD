@@ -3,68 +3,128 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Eventos Concepcion</title>
-	<meta name="description" content="Pagina para recopilar y descubrir eventos en Concepcion.">
+	<title>Pulso Conce | Landing de eventos en Concepcion</title>
+	<meta name="description" content="Pulso Conce: descubre, comparte y publica eventos culturales, musicales y comunitarios del Gran Concepcion.">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+	<div class="bg-glow" aria-hidden="true"></div>
 	<div class="page">
 		<header class="topbar reveal">
-			<a class="brand" href="#" aria-label="Ir al inicio">
+			<a class="brand" href="#inicio" aria-label="Ir al inicio">
 				<span class="brand-mark" aria-hidden="true"></span>
 				<span class="brand-text">Pulso Conce</span>
 			</a>
 			<nav class="top-links" aria-label="Navegacion principal">
+				<a href="#beneficios">Beneficios</a>
 				<a href="#eventos">Eventos</a>
-				<a href="#publicar">Publicar</a>
-				<a href="#" class="pill">Sumar evento</a>
+				<a href="#comunidad">Comunidad</a>
+				<a href="#cta" class="pill">Publicar evento</a>
 			</nav>
 		</header>
 
-		<section class="hero reveal delay-1" id="publicar">
-			<div class="hero-grid">
-				<div class="hero-copy">
-					<span class="kicker">Agenda ciudadana de Concepcion</span>
-					<h1>Recopila, comparte y descubre eventos locales</h1>
-					<p>
-						Una vitrina comunitaria para actividades culturales, musica en vivo, ferias,
-						talleres y panoramas al aire libre en el Gran Concepcion.
-					</p>
-					<div class="hero-actions">
-						<a href="#eventos" class="btn btn-primary">Ver agenda</a>
-						<a href="#" class="btn btn-soft">Enviar evento</a>
+		<main>
+			<section class="hero reveal delay-1" id="inicio">
+				<div class="hero-grid">
+					<div class="hero-copy">
+						<span class="kicker">Agenda ciudadana del Gran Concepcion</span>
+						<h1>La landing para hacer visible lo que esta pasando en tu ciudad</h1>
+						<p>
+							Conecta cultura, musica y actividades de barrio en una sola vitrina digital.
+							Publica eventos en minutos y haz que mas personas participen.
+						</p>
+						<div class="hero-actions">
+							<a href="#eventos" class="btn btn-primary">Explorar agenda</a>
+							<a href="#cta" class="btn btn-soft">Sumar mi evento</a>
+						</div>
+						<ul class="hero-stats" aria-label="Metricas de Pulso Conce">
+							<li><strong>4.8/5</strong><span>valoracion promedio</span></li>
+							<li><strong>120+</strong><span>eventos mensuales</span></li>
+							<li><strong>15K</strong><span>personas alcanzadas</span></li>
+						</ul>
+					</div>
+					<figure class="hero-visual" aria-hidden="true">
+						<img src="images/hero.svg" alt="Ilustracion de actividades urbanas y culturales en Concepcion">
+						<figcaption class="hero-note">Actualizacion colaborativa todas las semanas</figcaption>
+					</figure>
+				</div>
+			</section>
+
+			<section id="beneficios" class="section reveal delay-2">
+				<div class="section-head">
+					<span class="eyebrow">Por que Pulso Conce</span>
+					<h2>Diseñado para organizadores y publico local</h2>
+				</div>
+				<div class="benefits-grid">
+					<article class="benefit-card">
+						<h3>Publicacion instantanea</h3>
+						<p>Carga tus datos clave y ten tu evento visible en segundos, sin procesos largos.</p>
+					</article>
+					<article class="benefit-card">
+						<h3>Segmentacion por categoria</h3>
+						<p>Musica, cine, talleres o actividades comunitarias con filtros simples y utiles.</p>
+					</article>
+					<article class="benefit-card">
+						<h3>Alcance local real</h3>
+						<p>Conecta con gente de tu zona que ya esta buscando panoramas para la semana.</p>
+					</article>
+				</div>
+			</section>
+
+			<section id="eventos" class="section reveal delay-3">
+				<div class="controls">
+					<div>
+						<span class="eyebrow">Agenda activa</span>
+						<h2>Eventos destacados</h2>
+						<p data-event-count>0 eventos publicados</p>
+					</div>
+					<div class="filters" role="toolbar" aria-label="Filtros de categoria">
+						<button class="filter-btn active" data-filter="Todos" type="button">Todos</button>
+						<button class="filter-btn" data-filter="Musica" type="button">Musica</button>
+						<button class="filter-btn" data-filter="Cultura" type="button">Cultura</button>
+						<button class="filter-btn" data-filter="Comunidad" type="button">Comunidad</button>
+						<button class="filter-btn" data-filter="Cine" type="button">Cine</button>
 					</div>
 				</div>
-				<figure class="hero-visual" aria-hidden="true">
-					<img src="images/hero.svg" alt="Ilustracion de eventos en Concepcion">
-					<figcaption class="hero-note">Actualizacion semanal colaborativa</figcaption>
-				</figure>
-			</div>
-		</section>
+				<div class="events-grid" data-events></div>
+			</section>
 
-		<section id="eventos" class="reveal delay-2">
-			<div class="controls">
+			<section id="comunidad" class="section reveal delay-4">
+				<div class="section-head">
+					<span class="eyebrow">Lo que dice la comunidad</span>
+					<h2>Organizadores y asistentes ya lo estan usando</h2>
+				</div>
+				<div class="testimonials-grid">
+					<blockquote class="quote-card">
+						<p>"Publicamos una tocata barrial y llenamos cupos en 48 horas. Simple y efectivo."</p>
+						<cite>Colectivo Sur Sonoro</cite>
+					</blockquote>
+					<blockquote class="quote-card">
+						<p>"Ahora tengo una sola pagina para saber que hacer cada fin de semana en Conce."</p>
+						<cite>Camila M., usuaria</cite>
+					</blockquote>
+					<blockquote class="quote-card">
+						<p>"Nos ayudo a visibilizar un ciclo de cine comunitario sin pagar publicidad."</p>
+						<cite>Red de Cine Vecinal</cite>
+					</blockquote>
+				</div>
+			</section>
+
+			<section id="cta" class="cta reveal delay-4">
 				<div>
-					<h2>Eventos destacados</h2>
-					<p data-event-count>0 eventos publicados</p>
+					<span class="eyebrow">Empieza hoy</span>
+					<h2>Haz crecer tu proximo evento con Pulso Conce</h2>
+					<p>Publica gratis, comparte tu link y alcanza nuevas audiencias de forma organica.</p>
 				</div>
-				<div class="filters" role="toolbar" aria-label="Filtros de categoria">
-					<button class="filter-btn active" data-filter="Todos" type="button">Todos</button>
-					<button class="filter-btn" data-filter="Musica" type="button">Musica</button>
-					<button class="filter-btn" data-filter="Cultura" type="button">Cultura</button>
-					<button class="filter-btn" data-filter="Comunidad" type="button">Comunidad</button>
-					<button class="filter-btn" data-filter="Cine" type="button">Cine</button>
-				</div>
-			</div>
-
-			<div class="events-grid" data-events></div>
-		</section>
+				<a href="#inicio" class="btn btn-primary">Quiero publicar ahora</a>
+			</section>
+		</main>
 
 		<footer class="footer">
-			<p>Hecho para visibilizar iniciativas y panoramas de barrio en Concepcion.</p>
+			<p>Hecho para visibilizar iniciativas culturales y panoramas de barrio.</p>
 			<p>Pulso Conce · <span data-year></span></p>
 		</footer>
 	</div>

@@ -5,6 +5,7 @@ const events = [
     date: "Vie 28 Mar · 19:30",
     place: "Teatro Biobio",
     audience: "Todo publico",
+    price: "Desde $8.000",
     image: "images/teatro.svg"
   },
   {
@@ -13,6 +14,7 @@ const events = [
     date: "Sab 29 Mar · 11:00",
     place: "Plaza Peru",
     audience: "Mayores de 14",
+    price: "Actividad gratuita",
     image: "images/mural.svg"
   },
   {
@@ -21,6 +23,7 @@ const events = [
     date: "Dom 30 Mar · 10:00",
     place: "Parque Ecuador",
     audience: "Familiar",
+    price: "Entrada liberada",
     image: "images/feria.svg"
   },
   {
@@ -29,6 +32,7 @@ const events = [
     date: "Mie 02 Abr · 20:00",
     place: "Costanera del Biobio",
     audience: "Todo publico",
+    price: "Aporte voluntario",
     image: "images/costanera.svg"
   }
 ];
@@ -48,6 +52,7 @@ function buildCard(eventItem, index) {
           <p class="meta-row"><img src="icons/calendar.svg" alt="">${eventItem.date}</p>
           <p class="meta-row"><img src="icons/pin.svg" alt="">${eventItem.place}</p>
           <p class="meta-row"><img src="icons/users.svg" alt="">${eventItem.audience}</p>
+          <p class="meta-row"><img src="icons/ticket.svg" alt="">${eventItem.price}</p>
         </div>
       </div>
     </article>
@@ -64,7 +69,7 @@ function renderCards(category = "Todos") {
     .map((eventItem, index) => buildCard(eventItem, index))
     .join("");
 
-  eventCount.textContent = `${filtered.length} eventos publicados`;
+  eventCount.textContent = `${filtered.length} evento${filtered.length === 1 ? "" : "s"} publicado${filtered.length === 1 ? "" : "s"}`;
 }
 
 filterButtons.forEach((button) => {
@@ -78,3 +83,20 @@ filterButtons.forEach((button) => {
 renderCards();
 
 document.querySelector("[data-year]").textContent = new Date().getFullYear();
+
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", (event) => {
+    const targetId = anchor.getAttribute("href");
+    if (!targetId || targetId === "#") {
+      return;
+    }
+
+    const target = document.querySelector(targetId);
+    if (!target) {
+      return;
+    }
+
+    event.preventDefault();
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+});
